@@ -113,7 +113,7 @@
       },
     },
 
-    render() {
+    render: function() {
       const { instance } = this
       const portalTargetClass = [ 'vue-treeselect__portal-target', instance.wrapperClass ]
       const portalTargetStyle = { zIndex: instance.zIndex }
@@ -173,7 +173,7 @@
       },
     },
 
-    render() {
+    render: function() {
       if (!placeholder) placeholder = (
         <div class="vue-treeselect__menu-placeholder" />
       )

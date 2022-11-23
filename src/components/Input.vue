@@ -211,7 +211,7 @@
         }
       },
 
-      renderInputContainer() {
+      renderInputContainer: function() {
         const { instance } = this
         const props = {}
         const children = []
@@ -247,7 +247,7 @@
         )
       },
 
-      renderInput() {
+      renderInput: function() {
         const { instance } = this
 
         return (
@@ -268,7 +268,7 @@
         )
       },
 
-      renderSizer() {
+      renderSizer: function() {
         return (
           <div ref="sizer" class="vue-treeselect__sizer">{this.value}</div>
         )
@@ -288,7 +288,7 @@
       },
     },
 
-    render() {
+    render: function() {
       return this.renderInputContainer()
     },
   }

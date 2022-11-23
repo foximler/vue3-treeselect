@@ -27,11 +27,11 @@
       shouldShow() {
         const { instance, node } = this
         return instance.shouldShowOptionInMenu(node)
-      },
+      }
     },
 
     methods: {
-      renderOption() {
+      renderOption: function() {
         const { instance, node } = this
         const optionClass = {
           'vue-treeselect__option': true,
@@ -55,7 +55,7 @@
         )
       },
 
-      renderSubOptionsList() {
+      renderSubOptionsList: function() {
         if (!this.shouldExpand) return null
 
         return (
@@ -68,7 +68,7 @@
         )
       },
 
-      renderArrow() {
+      renderArrow: function() {
         const { instance, node } = this
 
         if (instance.shouldFlattenOptions && this.shouldShow) return null
@@ -81,9 +81,9 @@
 
           return (
             <div class="vue-treeselect__option-arrow-container" onMousedown={this.handleMouseDownOnArrow}>
-              <transition name="vue-treeselect__option-arrow--prepare" appear={true}>
+              <div name="vue-treeselect__option-arrow--prepare" appear={true}>
                 <ArrowIcon class={arrowClass} />
-              </transition>
+              </div>
             </div>
           )
         }
@@ -102,7 +102,7 @@
         return null
       },
 
-      renderLabelContainer(children) {
+      renderLabelContainer: function(children) {
         return (
           <div class="vue-treeselect__label-container" onMousedown={this.handleMouseDownOnLabelContainer}>
             {children}
@@ -110,7 +110,7 @@
         )
       },
 
-      renderCheckboxContainer(children) {
+      renderCheckboxContainer: function(children) {
         const { instance, node } = this
 
         if (instance.single) return null
@@ -123,7 +123,7 @@
         )
       },
 
-      renderCheckbox() {
+      renderCheckbox: function() {
         const { instance, node } = this
         const checkedState = instance.forest.checkedStateMap[node.id]
         const checkboxClass = {
@@ -149,7 +149,7 @@
         )
       },
 
-      renderLabel() {
+      renderLabel: function() {
         const { instance, node } = this
         const shouldShowCount = (
           node.isBranch && (instance.localSearch.active
@@ -183,7 +183,7 @@
         )
       },
 
-      renderSubOptions() {
+      renderSubOptions: function() {
         const { node } = this
         
         if (!node.childrenStates.isLoaded) return null
@@ -194,7 +194,7 @@
 
       },
 
-      renderNoChildrenTip() {
+      renderNoChildrenTip: function() {
         const { instance, node } = this
 
         if (!node.childrenStates.isLoaded || node.children.length) return null
@@ -204,7 +204,7 @@
         )
       },
 
-      renderLoadingChildrenTip() {
+      renderLoadingChildrenTip: function() {
         const { instance, node } = this
 
         if (!node.childrenStates.isLoading) return null
@@ -214,7 +214,7 @@
         )
       },
 
-      renderLoadingChildrenErrorTip() {
+      renderLoadingChildrenErrorTip: function() {
         const { instance, node } = this
 
         if (!node.childrenStates.loadingError) return null
@@ -260,7 +260,7 @@
       }),
     },
 
-    render() {
+    render: function() {
       const { node } = this
       const indentLevel = this.instance.shouldFlattenOptions ? 0 : node.level
       const listItemClass = {
@@ -272,9 +272,9 @@
         <div class={listItemClass}>
           {this.renderOption()}
           {node.isBranch ? (
-            <transition name="vue-treeselect__list--transition">
+            <div name="vue-treeselect__list--transition">
               {this.renderSubOptionsList()}
-            </transition>
+            </div>
           ) : ''}
         </div>
       )

@@ -22,7 +22,7 @@
       }),
     },
 
-    render() {
+    render: function() {
       const { instance, node } = this
       const itemClass = {
         'vue-treeselect__multi-value-item': true,

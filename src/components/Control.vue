@@ -55,7 +55,7 @@
     },
 
     methods: {
-      renderX() {
+      renderX: function() {
         const { instance } = this
         const title = instance.multiple ? instance.clearAllText : instance.clearValueText
 
@@ -68,7 +68,7 @@
         )
       },
 
-      renderArrow() {
+      renderArrow: function() {
         const { instance } = this
         const arrowClass = {
           'vue-treeselect__control-arrow': true,
@@ -128,7 +128,7 @@
       }),
 
       // This is meant to be called by child `<Value />` component.
-      renderValueContainer(children) {
+      renderValueContainer: function(children) {
         return (
           <div class="vue-treeselect__value-container">
             {children}
@@ -137,7 +137,7 @@
       },
     },
 
-    render() {
+    render: function() {
       const { instance } = this
       const ValueContainer = instance.single ? SingleValue : MultiValue
 

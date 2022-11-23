@@ -1,12 +1,13 @@
 {
-  "name": "vue3-treeselect",
-  "version": "0.1.1",
-  "description": "Tree select hierarchical component for vue 3 (next)",
-  "main": "dist/vue3-treeselect.common.js",
-  "unpkg": "dist/vue3-treeselect.umd.js",
-  "author": "megafetis",
+  "name": "treeselect",
+  "version": "0.1.4",
+  "description": "Tree select hierarchical component for vue 3 (next). Fork of a fork of a fork. Locally stored to allow for fast updates and prevent upstream attacks.",
+  "main": "dist/treeselect.common.js",
+  "unpkg": "dist/treeselect.umd.js",
+  "author": "foximler",
   "scripts": {
-    "build": "vue-cli-service build --target lib --name vue3-treeselect ./src/index.js && webpack --env.production",
+    "build": "vue-cli-service build --target lib --name treeselect ./src/index.js && webpack --env.production",
+    "serve": "webpack --env.development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -14,12 +15,12 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-typescript": "^7.12.7",
     "@types/ts-nameof": "4.2.1",
-    "@vue/babel-plugin-jsx": "1.0.1",
-    "@vue/babel-preset-jsx": "1.2.4",
+    "@vue/babel-plugin-jsx": "1.1.1",
+    "@vue/babel-preset-jsx": "1.4.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "3.0.5",
+    "@vue/compiler-sfc": "3.2.40",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.0.3",
@@ -55,13 +56,13 @@
     "vue": "^3.0.0"
   },
   "bugs": {
-    "url": "https://github.com/megafetis/vue3-treeselect/issues"
+    "url": "https://github.com/foximler/vue3-treeselect"
   },
   "browserslist": [
     "Android >= 4.0",
     "iOS >= 8"
   ],
-  "homepage": "https://github.com/megafetis/vue3-treeselect",
+  "homepage": "https://github.com/foximler/vue3-treeselect",
   "files": [
     "dist/*.js",
     "dist/*.css",
@@ -85,8 +86,4 @@
     "*.less"
   ],
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/megafetis/vue3-treeselect.git"
-  }
 }

@@ -8,7 +8,7 @@
     inject: [ 'instance' ],
 
     methods: {
-      renderMultiValueItems() {
+      renderMultiValueItems: function(){
         const { instance } = this
 
         return instance.internalValue
@@ -19,7 +19,7 @@
           ))
       },
 
-      renderExceedLimitTip() {
+      renderExceedLimitTip: function(){
         const { instance } = this
         const count = instance.internalValue.length - instance.limit
 
@@ -33,7 +33,7 @@
       },
     },
 
-    render() {
+    render: function(){
       const { renderValueContainer } = this.$parent
       // const transitionGroupProps = {
       //   props: {
@@ -44,12 +44,12 @@
       // }
 
       return renderValueContainer(
-        <transition-group class="vue-treeselect__multi-value" tag="div" name="vue-treeselect__multi-value-item--transition" appear={true} >
+        <div class="vue-treeselect__multi-value" tag="div" name="vue-treeselect__multi-value-item--transition" appear={true} >
           {this.renderMultiValueItems()}
           {this.renderExceedLimitTip()}
           <Placeholder key="placeholder" />
           <Input ref="input" key="input" />
-        </transition-group>,
+        </div>,
       )
     },
   }

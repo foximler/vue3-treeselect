@@ -53,6 +53,11 @@ module.exports = (env = {}) => ([
           }
         ],
       },
+      {
+          test: /\.tsx$/,
+          use: ['babel-loader', 'vue-jsx-hot-loader', 'ts-loader'],
+          exclude: /node_modules/
+      },
 
       {
         test: /\.(less)$/,

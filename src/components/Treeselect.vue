@@ -23,7 +23,7 @@
     },
 
     computed: {
-      wrapperClass() {
+      wrapperClass: function() {
         return {
           'vue-treeselect': true,
           'vue-treeselect--single': this.single,
@@ -41,7 +41,7 @@
       },
     },
 
-    // render() {
+    // render: function() {
     //   return (
     //     <div ref="wrapper" class={this.wrapperClass}>
     //       <HiddenFields />
